@@ -94,7 +94,7 @@ header {
 }
 
 
-h1 {
+h1,#footer-header {
     pointer-events: none;
     text-align: center;
     color: rgb(32, 45, 60);
@@ -144,7 +144,7 @@ footer {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(178, 190, 195);
+    background-color: rgb(53, 203, 207);
     font-size: 30px;
     color: #052022;
 }

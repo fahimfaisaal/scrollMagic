@@ -22,16 +22,21 @@ function replaceText(el) {
 header.addEventListener('mousemove', function (e) {
     let h1 = document.querySelector("#head-title");
     let moveX = e.offsetX / 15;
-    this.style.backgroundColor = `rgba(, 125, 200,0.8)`;
+    this.style.backgroundColor = `rgba(${moveX}, 125, 200,0.8)`;
     let moveHeadX = e.offsetX / -20;
     let moveHeadY = e.offsetY / -35;
     h1.style.transform = `translate(${moveHeadX}px,${moveHeadY}px)`;
 })
 
 let footer = document.querySelector('footer')
+let footerHead = document.getElementById('footer-header')
+console.log(footerHead)
 footer.addEventListener('mousemove', function (e) {
-    let moveX = e.offsetX / 20;
-    this.style.backgroundColor = `rgba(${moveX}, 190, 195,0.8)`;
+    let colorX = e.offsetX / 20;
+    let moveHeadX = e.offsetX / -20;
+    let moveHeadY = e.offsetY / -35;
+    this.style.backgroundColor = `rgba(${colorX}, 190, 195,0.8)`;
+    footerHead.style.transform = `translate(${moveHeadX}px,${moveHeadY}px)`;
 })
 
 function parallax(element, transform, distance, speed) {
