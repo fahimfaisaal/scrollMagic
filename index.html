@@ -8,30 +8,42 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://csshake.surge.sh/csshake.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body id="my-scrollbar">
     <nav>
       <ul>
         <div id="marker"></div>
-        <li><a class="list-item__link act" href="#">home</a></li>
-        <li><a class="list-item__link" href="#">about me</a></li>
-        <li><a class="list-item__link" href="#">services</a></li>
-        <li><a class="list-item__link" href="#">portfolio</a></li>
-        <li><a class="list-item__link" href="#">contact</a></li>
+        <li><a class="list-item__link act" href="#home">home</a></li>
+        <li><a class="list-item__link" href="#about">about first</a></li>
+        <li>
+          <a class="list-item__link" href="#about_second">about second</a>
+        </li>
+        <li><a class="list-item__link" href="#about_three">about third</a></li>
+        <li><a class="list-item__link" href="#footer">end</a></li>
       </ul>
     </nav>
-    <header id="header">
-      <h1 id="head-title">Welcome to Scroll Magic</h1>
-    </header>
+    <div id="home">
+      <header id="header">
+        <div class="head">
+          <h1 id="head-title">Welcome to Scroll Magic</h1>
+        </div>
+      </header>
+    </div>
 
-    <div class="about row">
+    <div class="about row" id="about">
       <div class="about-title">
-        <h2>About</h2>
+        <h2>About Me</h2>
       </div>
       <div class="about-pages" id="pages">
-        <div>
+        <div data-aos="fade-left">
           <h3>Project-1</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
@@ -42,7 +54,7 @@
             blanditiis hic similique, odit molestiae qui harum quas perferendis.
           </p>
         </div>
-        <div>
+        <div data-aos="fade-up" id="about_second">
           <h3>Project-2</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
@@ -53,7 +65,7 @@
             blanditiis hic similique, odit molestiae qui harum quas perferendis.
           </p>
         </div>
-        <div>
+        <div data-aos="zoom-in-right" id="about_three">
           <h3>Project-3</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
@@ -68,14 +80,15 @@
       </div>
     </div>
 
-    <div>
-      <footer>
-        <h2>It's pretty Cool,Right?</h2>
-      </footer>
-    </div>
+    <footer id="footer">
+      <h2 id="footer-header">It's pretty Cool,Right?</h2>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
