@@ -55,46 +55,35 @@ window.onscroll = function () {
     letterSpace('h1', window.scrollY, 100)
 }
 
-
+//* Menu animation
 
 let links = document.querySelectorAll('.list-item__link')
+
 links.forEach(link => {
     replaceText(link)
-    link.addEventListener('click', function (e) {
-        const tl = anime.timeline({
-            loop: false
-        })
-        tl.add({
-                targets: this.children,
-                // scale: [1, 0.5],
-                translateX: [0, 20],
-                rotate: [0, 180],
-                opacity: [1, 0],
-                easing: 'easeInOutSine',
-                duration: 600,
-                delay: function (el, i) {
-                    return i * 100;
-                },
-            })
-            .add({
-                targets: this.children,
-                // scale: [0.5, 1],
-                translateX: [20, 0],
-                rotate: [180, 360],
-                opacity: [0, 1],
-                easing: 'easeInOutSine',
-                duration: 600,
-            })
+    let animation = anime({
+        targets: link.children,
+        scale: [1, 0.5],
+        // translateX: 20,
+        rotate: 90,
+        opacity: 0,
+        direction: 'alternate',
+        easing: 'easeInOutSine',
+        duration: 600,
+        delay:(el, i) => i * 80,
+        loop: 1,
+        autoplay: false,
     })
+    link.onclick = animation.play
 })
 
+//* marker
 let marker = document.querySelector('#marker')
 let items = document.querySelectorAll('.list-item__link')
 
 function indicator(e) {
     marker.style.left = e.offsetLeft + 'px'
     marker.style.width = e.offsetWidth + 'px'
-    console.log(e.offsetWidth)
 }
 items.forEach(item => {
     item.addEventListener('click', function (e) {
